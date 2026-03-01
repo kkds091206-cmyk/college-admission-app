@@ -6,23 +6,25 @@
 </head>
 <body>
 
-<h2>Student Admission Form</h2>
+<div class="box">
+  <h2>Student Admission Form</h2>
 
-<form onsubmit="saveStudent(); return false;">
-  <input type="text" id="name" placeholder="Student Name" required>
-  <input type="number" id="mark" placeholder="12th Mark %" required>
+  <form onsubmit="saveStudent(); return false;">
+    <input id="name" placeholder="Student Name" required>
+    <input id="mark" type="number" placeholder="12th Mark %" required>
 
-  <select id="group">
-    <option>BSc</option>
-    <option>BBA</option>
-    <option>BCom</option>
-    <option>BA</option>
-  </select>
+    <select id="group">
+      <option>BSc</option>
+      <option>BBA</option>
+      <option>BCom</option>
+      <option>BA</option>
+    </select>
 
-  <input type="number" id="maxFee" placeholder="Max Fee per Semester" required>
+    <input id="maxFee" type="number" placeholder="Max Fee per Semester" required>
 
-  <button type="submit">Submit</button>
-</form>
+    <button type="submit">Submit</button>
+  </form>
+</div>
 
 <script>
 function saveStudent() {
@@ -30,7 +32,6 @@ function saveStudent() {
   localStorage.setItem("mark12", mark.value);
   localStorage.setItem("group", group.value);
   localStorage.setItem("maxFee", maxFee.value);
-
   window.location.href = "output.html";
 }
 </script>
