@@ -11,17 +11,17 @@ colleges.push(
   {
     name: "Government Arts College",
     location: "Salem",
-    spec: "Government College | Low Fees",
+    spec: "Government | Low Fees",
     fees: { BSc: 18000, BBA: 20000, BCom: 19000, BA: 15000 }
   }
 );
 
-// Auto-generate remaining colleges
+// Auto-generate colleges up to 200
 for (let i = 3; i <= 200; i++) {
   colleges.push({
     name: "Arts and Science College " + i,
     location: "District " + (i % 10 + 1),
-    spec: "Affiliated | Skill Based Education",
+    spec: "Affiliated | Skill Based Programs",
     fees: {
       BSc: 20000 + i * 5,
       BBA: 22000 + i * 5,
