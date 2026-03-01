@@ -1,25 +1,48 @@
+/* common */
 body {
-  font-family: Arial;
-  background: #eef2f3;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* HOME BACKGROUND */
+.home-bg {
+  background-image: url("images/home.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LOGIN BACKGROUND */
+.login-bg {
+  background-image: url("images/login.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTENT BOX */
+.box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  width: 320px;
+  border-radius: 10px;
   text-align: center;
 }
 
-.box {
-  background: white;
-  width: 330px;
-  margin: 60px auto;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-input, select, button {
-  width: 90%;
-  padding: 8px;
-  margin: 8px;
-}
-
 button {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
   background: #2c3e50;
   color: white;
   border: none;
+  border-radius: 5px;
 }
