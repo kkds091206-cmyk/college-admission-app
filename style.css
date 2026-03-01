@@ -4,16 +4,12 @@ body {
   text-align: center;
 }
 
-.login-box, .result-box {
+.box {
   background: white;
-  width: 320px;
+  width: 330px;
   margin: 60px auto;
   padding: 20px;
   border-radius: 10px;
-}
-
-.login-img {
-  width: 100px;
 }
 
 input, select, button {
