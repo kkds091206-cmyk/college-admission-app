@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>College Admission System</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="login-box">
-  <img src="login.png" class="login-img">
-  <h2>Login</h2>
+  <h1>🎓 College Admission System</h1>
+  <p>Arts & Science Colleges</p>
 
-  <button onclick="studentLogin()">Student Login</button>
-  <button onclick="staffLogin()">Staff Login</button>
+  <p>
+    Find suitable colleges based on marks, fees and group.
+  </p>
+
+  <button onclick="goLogin()">Get Started</button>
 </div>
 
-<script src="script.js"></script>
+<script>
+function goLogin() {
+  window.location.href = "login.html";
+}
+</script>
+
 </body>
 </html>
