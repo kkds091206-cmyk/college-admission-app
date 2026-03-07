@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Page</title>
+<title>Login System</title>
 
 <style>
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial, sans-serif;
+  background:#e6d1bd;
 }
 
 .login-bg{
@@ -14,45 +15,93 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#4facfe,#00f2fe);
 }
 
 .box{
-  background:white;
+  background:#eeeeee;
   padding:40px;
   border-radius:10px;
   text-align:center;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  width:350px;
 }
 
 button{
   display:block;
-  width:200px;
+  width:250px;
   margin:15px auto;
-  padding:10px;
+  padding:12px;
   border:none;
-  border-radius:5px;
-  background:#4facfe;
+  border-radius:6px;
+  background:#2f4154;
   color:white;
   font-size:16px;
   cursor:pointer;
 }
 
 button:hover{
-  background:#0077ff;
+  background:#1e2c3a;
+}
+
+input{
+  width:90%;
+  padding:10px;
+  margin:10px 0;
+}
+
+.form-box{
+  display:none;
 }
 </style>
+
+<script>
+function showStudent(){
+  document.getElementById("main").style.display="none";
+  document.getElementById("studentForm").style.display="block";
+}
+
+function showStaff(){
+  document.getElementById("main").style.display="none";
+  document.getElementById("staffForm").style.display="block";
+}
+
+function goBack(){
+  document.getElementById("main").style.display="block";
+  document.getElementById("studentForm").style.display="none";
+  document.getElementById("staffForm").style.display="none";
+}
+</script>
 
 </head>
 
 <body>
 
 <div class="login-bg">
-  <div class="box">
-    <h2>Login</h2>
-    <button onclick="alert('Student Login Clicked')">Student Login</button>
-    <button onclick="alert('Staff Login Clicked')">Staff Login</button>
-  </div>
+
+<!-- Main Menu -->
+<div class="box" id="main">
+<h2>Login</h2>
+<button onclick="showStudent()">Student Login</button>
+<button onclick="showStaff()">Staff Login</button>
+</div>
+
+<!-- Student Login -->
+<div class="box form-box" id="studentForm">
+<h2>Student Login</h2>
+<input type="text" placeholder="Student ID"><br>
+<input type="password" placeholder="Password"><br>
+<button>Login</button>
+<button onclick="goBack()">Back</button>
+</div>
+
+<!-- Staff Login -->
+<div class="box form-box" id="staffForm">
+<h2>Staff Login</h2>
+<input type="text" placeholder="Staff ID"><br>
+<input type="password" placeholder="Password"><br>
+<button>Login</button>
+<button onclick="goBack()">Back</button>
+</div>
+
 </div>
 
 </body>
