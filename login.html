@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Smart Arts and Science College Finder</title>
+<title>Student Login</title>
 
 <style>
 
 body{
-font-family:Arial;
-background:#4facfe;
-text-align:center;
-margin-top:100px;
+font-family: Arial;
+background:#f2f2f2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
 
-.container{
+.box{
 background:white;
-width:300px;
-margin:auto;
-padding:20px;
+padding:30px;
+width:320px;
 border-radius:10px;
 box-shadow:0 0 10px gray;
+text-align:center;
 }
 
 input{
@@ -28,74 +30,75 @@ margin:10px;
 }
 
 button{
-padding:10px;
 width:95%;
-background:#007BFF;
+padding:10px;
+background:#1d3f72;
 color:white;
 border:none;
+margin-top:10px;
+border-radius:5px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="box">
 
-<h2>Smart College Finder</h2>
+<h2>Student Login</h2>
 
-<h3>Register</h3>
+<input type="text" id="username" placeholder="Username">
 
-<input type="text" id="regUser" placeholder="Create Username">
+<input type="password" id="password" placeholder="Password">
 
-<input type="password" id="regPass" placeholder="Create Password">
+<br>
 
-<button onclick="register()">Register</button>
+<label>
+<input type="checkbox" onclick="showPassword()"> Show Password
+</label>
 
-<hr>
-
-<h3>Login</h3>
-
-<input type="text" id="loginUser" placeholder="Username">
-
-<input type="password" id="loginPass" placeholder="Password">
+<br><br>
 
 <button onclick="login()">Login</button>
 
-<p id="message"></p>
+<button onclick="history.back()">Back</button>
+
+<p id="msg"></p>
 
 </div>
 
 <script>
 
-function register(){
+function showPassword(){
 
-var user=document.getElementById("regUser").value;
-var pass=document.getElementById("regPass").value;
+var x = document.getElementById("password");
 
-localStorage.setItem("username",user);
-localStorage.setItem("password",pass);
-
-document.getElementById("message").innerHTML="Registration Successful";
+if(x.type === "password"){
+x.type = "text";
+}else{
+x.type = "password";
+}
 
 }
 
 function login(){
 
-var user=document.getElementById("loginUser").value;
-var pass=document.getElementById("loginPass").value;
+var user=document.getElementById("username").value;
+var pass=document.getElementById("password").value;
 
 var storedUser=localStorage.getItem("username");
 var storedPass=localStorage.getItem("password");
 
 if(user==storedUser && pass==storedPass){
 
-document.getElementById("message").innerHTML="Login Successful";
+window.location.href="home.html";
 
 }
 else{
 
-document.getElementById("message").innerHTML="Invalid Username or Password";
+document.getElementById("msg").innerHTML="Invalid Username or Password";
 
 }
 
